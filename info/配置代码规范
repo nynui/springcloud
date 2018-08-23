@@ -1,0 +1,44 @@
+平台基于前后端分离模式，采用REST风格提供接口模型，前端根据接口模型创建桩数据，实现动态页面功能开发。
+	 PUTMapping 修改、新增
+	 deleteMapping  删除
+	 postMapping   新增 ,查询
+	 getMapping   查看
+	1、类命名规范：
+		类名使用UpperCameCase 风格 ，也就是驼峰形式。
+		抽象类命名使用Abstract 或Base 开关;
+		异常类命名使用Exception结尾;
+		测试类命名以测试的类的名称开始，以Test结尾
+		 子模块+相关的服务
+		     xxxController
+		     IxxxService
+		     xxxServiceImpl
+		     xxxMapper
+	2、Servic/DAO层方法命名规范
+		1)获取单个对象的方法用get做前缀
+		2)获取多个对象的方法用list/select做前缀
+		3)获取统计值的方法用count做前缀
+		4)插入的方法用save或insert做前缀
+		5)删除的方法用remove或delete做前缀
+		6)修改的方法用update做前缀
+	3、注释
+		(1)类：文件功能说明，创建人，创建时间
+		(2)方法：方法功能说明，参数注释
+		(3)业务逻辑：梳理业务逻辑和流程
+	4、 单元测试
+	 	Service , controller接口必须经过单元测试.
+	5、分页插件
+	     在需要分页的列表前面加入 下面这句就可以了
+	    PageHelper.startPage(pageNum,pageSize);//pageNum  pageSize
+
+   6日志规范
+	   log规范相关资料：采用log4j标准
+		1.log对象定义格式：private static Logger logger = LoggerFactory.getLogger(SolrSearchManger.class);
+		2.log要求：分清war debug info error等四种情况，不能乱打info否则线上日志会爆炸
+		3.入口出口一定要打印日志，分享一种格式：
+		入口：uuid->WMS系统：method=,params={},ip=,token={}(ip，session等为可选项，其余为必填)
+		出口: uuid->WMS系统：method=，data={},time={},code={}(data为返回数据，其中uuid应与入口一致，方便查询问题)
+		4.关键业务点log:
+		uuid->WMS系统:event（log事件）=xxx,result={},params={}，msg=xxx
+
+IDEA配置代码规范   https://blog.csdn.net/weixin_39220472/article/details/80077803
+阿里规范插件GitHub地址：https://github.com/alibaba/p3c
