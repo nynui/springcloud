@@ -1,0 +1,58 @@
+#Spring
+eureka:
+  client:
+    healthcheck:
+      enabled: false
+
+spring:
+  profiles:
+    active: local
+  application:
+    name: usermgt-service
+  cloud:
+    config:
+      enabled: false
+  zipkin:
+    #Zipkin Server 的 ip:port，这里换成自己的 Zipkin Server 的 IP 即可
+#    base-url: http://192.168.174.128:9411/
+    #为了测试 rabbitmq 的集成，修改为错误指向
+    base-url: http://10.100.1.31:9411
+    enabled: true
+  #这里把抽样百分比设置为1，即信息全部采集
+  sleuth:
+    sampler:
+      probability: 1.0
+#  zipkin:
+#    enabled: true
+#    baseUrl: http://localhost:9411/
+#  sleuth:
+#    web:
+#      client:
+#        enabled: true
+#    sampler:
+#      probability: 1.0
+    #  percentage: 1.0  #spring cloud 2.0-
+#axon
+axon:
+  distributed:
+    enabled: true
+  amqp:
+    exchange: erp.EventBus
+
+swagger:
+  service:
+    name: usermgt
+    description: 用户管理
+  contact:
+    name: Kevin
+    url:
+    email: pengfawen@techb.com
+
+erp:
+  access_token:
+    enable: true
+
+zuulProxyName: usermgt
+#配置除了总经理之外,还有如下职能可以查看下级员工
+myprops:
+  func_names: 主管,经理

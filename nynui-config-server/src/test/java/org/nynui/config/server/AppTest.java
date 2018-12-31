@@ -35,4 +35,11 @@ public class AppTest
     {
         assertTrue( true );
     }
+
+
+    public  void testMap(){
+
+      Map  m=new HashMap();
+
+    }
 }

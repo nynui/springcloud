@@ -8,7 +8,7 @@ public class Config {
 	
 	
 	public void init(){
-		System.out.println("config  is init");
-		 System.out.println("test  devtools");
+		 System.out.println("config  is init");
+	 	 System.out.println("test  devtools");
 	}
 }

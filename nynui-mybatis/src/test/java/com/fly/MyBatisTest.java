@@ -53,9 +53,6 @@ public class MyBatisTest {
     public void selectUser(){
         SqlSession  sqlSession=getSession();
         UserMapper  userMapper= sqlSession.getMapper(UserMapper.class);
-       User u=new User();
-       u.setUsername("ls");
-   
        User user=userMapper.selectUser(3);
         logger.info(user.toString());
     }

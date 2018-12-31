@@ -24,11 +24,11 @@
     </environments>
 
     <mappers>
-       <!-- <mapper resource="mybatis/UserMapper.xml"/>-->
+      <mapper resource="UserMapper.xml"/>
        <!-- <mapper class="com.jiagouedu.mybatis.mapper.UserMapper"></mapper>-->
        <!-- <package name="com.jiagouedu.mybatis.mapper"></package>-->
        <!-- <mapper class="com.jiagouedu.mapper.UserMapper"></mapper>-->
-       <mapper class="com.fly.mapper.UserMapper"></mapper>
+       <!--<mapper class="com.fly.mapper.UserMapper"></mapper>-->
      <!--   <package name="com.fly.mapper"></package> -->
     </mappers>
 </configuration>
